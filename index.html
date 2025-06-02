@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesotho Digital Innovation Summit | SkyAlpha HD</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary-color: #2c3e50;
+        --secondary-color: #3498db;
+        --accent-color: #e74c3c;
+        --light-color: #ecf0f1;
+        --dark-color: #2c3e50;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f8f9fa;
+        color: #333;
+      }
+
+      .navbar {
+        background-color: var(--primary-color);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar-brand img {
+        height: 40px;
+      }
+
+      .hero-section {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        color: white;
+        padding: 3rem 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .live-badge {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background-color: var(--accent-color);
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-weight: bold;
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        background-color: #000;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .video-container iframe,
+      .video-container video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .countdown-timer {
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 1.5rem;
+        border-radius: 8px;
+        text-align: center;
+        margin-top: 1rem;
+      }
+
+      .countdown-item {
+        display: inline-block;
+        margin: 0 10px;
+      }
+
+      .countdown-number {
+        font-size: 2rem;
+        font-weight: bold;
+        color: white;
+      }
+
+      .countdown-label {
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.8);
+        text-transform: uppercase;
+      }
+
+      .summit-card {
+        border: none;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        margin-bottom: 20px;
+      }
+
+      .summit-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .summit-card img {
+        height: 180px;
+        object-fit: cover;
+      }
+
+      .summit-card .card-body {
+        padding: 1.5rem;
+      }
+
+      .summit-card .university-badge {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: var(--secondary-color);
+        color: white;
+        padding: 3px 10px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+      }
+
+      .filter-section {
+        background-color: white;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        margin-bottom: 2rem;
+      }
+
+      .footer {
+        background-color: var(--dark-color);
+        color: white;
+        padding: 3rem 0;
+      }
+
+      .footer-links a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        margin-right: 15px;
+      }
+
+      .footer-links a:hover {
+        color: white;
+      }
+
+      .social-icons a {
+        color: white;
+        font-size: 1.5rem;
+        margin-right: 15px;
+      }
+
+      @media (max-width: 768px) {
+        .hero-section {
+          padding: 2rem 0;
+        }
+
+        .countdown-item {
+          margin: 0 5px;
+        }
+
+        .countdown-number {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img
+            src="https://via.placeholder.com/150x50?text=SkyAlpha+HD"
+            alt="SkyAlpha HD"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#summits">Past Summits</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+            <li class="nav-item d-lg-none">
+              <a
+                class="nav-link"
+                href="#"
+                data-bs-toggle="modal"
+                data-bs-target="#searchModal"
+              >
+                <i class="fas fa-search"></i> Search
+              </a>
+            </li>
+          </ul>
+          <form class="d-flex ms-3 d-none d-lg-block">
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Search summits..."
+              />
+              <button class="btn btn-outline-light" type="submit">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section with Live Stream/Countdown -->
+    <section class="hero-section">
+      <div class="container position-relative">
+        <div class="row align-items-center">
+          <div class="col-lg-8">
+            <h1>Lesotho Digital Innovation Summit</h1>
+            <p class="lead">
+              Empowering universities and institutions through technology and
+              innovation
+            </p>
+            <div class="d-flex align-items-center mb-3">
+              <span class="badge bg-light text-dark me-2">Live Now</span>
+              <span>National University of Lesotho</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Stream Container -->
+        <div class="video-container mt-4">
+          <div class="live-badge"><i class="fas fa-circle me-2"></i> LIVE</div>
+          <!-- Replace with actual video embed code -->
+          <iframe
+            src="https://www.youtube.com/embed/live_stream?channel=UCXYZ"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <!-- Countdown Timer (shown when no live stream) -->
+        <!-- <div class="countdown-timer">
+                <h4>Next Summit Starts In:</h4>
+                <div class="countdown-container">
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="days">00</div>
+                        <div class="countdown-label">Days</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="hours">00</div>
+                        <div class="countdown-label">Hours</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="minutes">00</div>
+                        <div class="countdown-label">Minutes</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="seconds">00</div>
+                        <div class="countdown-label">Seconds</div>
+                    </div>
+                </div>
+                <button class="btn btn-light mt-3">Remind Me</button>
+            </div> -->
+      </div>
+    </section>
+
+    <!-- Featured Sessions (if live) -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <h2 class="mb-4">Today's Featured Sessions</h2>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <div class="card-img-top position-relative">
+                <img
+                  src="https://via.placeholder.com/400x225?text=Tech+Talk"
+                  class="card-img-top"
+                  alt="Session"
+                />
+                <span class="badge bg-danger position-absolute top-0 end-0 m-2"
+                  >LIVE</span
+                >
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Digital Transformation in Education</h5>
+                <p class="card-text">
+                  Dr. Thabo Mokoena discusses how Lesotho universities can
+                  embrace digital transformation.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-muted"
+                    >National University of Lesotho</small
+                  >
+                  <a href="#" class="btn btn-sm btn-primary">Watch Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <div class="card-img-top">
+                <img
+                  src="https://via.placeholder.com/400x225?text=Panel"
+                  class="card-img-top"
+                  alt="Session"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Startup Ecosystem in Lesotho</h5>
+                <p class="card-text">
+                  Panel discussion with successful entrepreneurs from Lesotho's
+                  tech scene.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-muted">Botho University</small>
+                  <a href="#" class="btn btn-sm btn-outline-primary"
+                    >Upcoming</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <div class="card-img-top">
+                <img
+                  src="https://via.placeholder.com/400x225?text=Workshop"
+                  class="card-img-top"
+                  alt="Session"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">AI for Social Good</h5>
+                <p class="card-text">
+                  Practical workshop on implementing AI solutions for community
+                  challenges.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-muted">Limkokwing University</small>
+                  <a href="#" class="btn btn-sm btn-outline-primary"
+                    >Upcoming</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Past Summits Section -->
+    <section class="py-5" id="summits">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h2>Explore Past Summits</h2>
+          <div>
+            <button
+              class="btn btn-outline-secondary dropdown-toggle"
+              type="button"
+              id="filterDropdown"
+              data-bs-toggle="dropdown"
+            >
+              Filter By: Year
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">All Years</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item" href="#">2023</a></li>
+              <li><a class="dropdown-item" href="#">2022</a></li>
+              <li><a class="dropdown-item" href="#">2021</a></li>
+            </ul>
+            <button
+              class="btn btn-outline-secondary dropdown-toggle"
+              type="button"
+              id="universityDropdown"
+              data-bs-toggle="dropdown"
+            >
+              University
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">All Universities</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li>
+                <a class="dropdown-item" href="#"
+                  >National University of Lesotho</a
+                >
+              </li>
+              <li><a class="dropdown-item" href="#">Botho University</a></li>
+              <li>
+                <a class="dropdown-item" href="#">Limkokwing University</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row">
+          <!-- Summit Card 1 -->
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card summit-card">
+              <img
+                src="https://via.placeholder.com/600x400?text=Summit+2022"
+                class="card-img-top"
+                alt="Summit 2022"
+              />
+              <span class="university-badge">NUL</span>
+              <div class="card-body">
+                <h5 class="card-title">2022 Digital Innovation Summit</h5>
+                <p class="card-text">
+                  Exploring the future of education technology with 15
+                  universities across Lesotho.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-muted">December 5-7, 2022</small>
+                  <a href="#" class="btn btn-sm btn-primary">View Videos</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Summit Card 2 -->
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card summit-card">
+              <img
+                src="https://via.placeholder.com/600x400?text=Summit+2021"
+                class="card-img-top"
+                alt="Summit 2021"
+              />
+              <span class="university-badge">Botho</span>
+              <div class="card-body">
+                <h5 class="card-title">2021 Tech Education Forum</h5>
+                <p class="card-text">
+                  Bridging the digital divide in Lesotho's higher education
+                  institutions.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-muted">October 10-12, 2021</small>
+                  <a href="#" class="btn btn-sm btn-primary">View Videos</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Summit Card 3 -->
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card summit-card">
+              <img
+                src="https://via.placeholder.com/600x400?text=Summit+2020"
+                class="card-img-top"
+                alt="Summit 2020"
+              />
+              <span class="university-badge">Limkokwing</span>
+              <div class="card-body">
+                <h5 class="card-title">2020 Digital Transformation Summit</h5>
+                <p class="card-text">
+                  First virtual summit addressing COVID-19 challenges in
+                  education.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-muted">July 15-17, 2020</small>
+                  <a href="#" class="btn btn-sm btn-primary">View Videos</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-4">
+          <button class="btn btn-outline-primary">Load More Summits</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-5 bg-light" id="about">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <h2 class="mb-4">About the Digital Innovation Summit</h2>
+            <p>
+              The Lesotho Digital Innovation Summit is an annual event organized
+              by SkyAlpha HD in partnership with universities and institutions
+              across Lesotho.
+            </p>
+            <p>
+              Our mission is to foster digital transformation in higher
+              education by bringing together thought leaders, educators, and
+              innovators to share knowledge and best practices.
+            </p>
+            <p>
+              Since 2020, we've hosted over 150 sessions with participation from
+              all major universities in Lesotho, reaching thousands of students
+              and faculty members.
+            </p>
+            <a href="#" class="btn btn-primary mt-3">Learn More</a>
+          </div>
+          <div class="col-lg-6">
+            <img
+              src="https://via.placeholder.com/600x400?text=About+Summit"
+              alt="About the Summit"
+              class="img-fluid rounded"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-5" id="contact">
+      <div class="container">
+        <h2 class="text-center mb-5">Contact Us</h2>
+        <div class="row">
+          <div class="col-md-6 mb-4 mb-md-0">
+            <h4>Get in Touch</h4>
+            <p>
+              Have questions about the summit or want to participate as a
+              speaker or partner?
+            </p>
+
+            <div class="mb-3">
+              <h5><i class="fas fa-envelope me-2"></i> Email</h5>
+              <p>summit@skyalphahd.co.ls</p>
+            </div>
+
+            <div class="mb-3">
+              <h5><i class="fas fa-phone me-2"></i> Phone</h5>
+              <p>+266 1234 5678</p>
+            </div>
+
+            <div class="mb-3">
+              <h5><i class="fas fa-map-marker-alt me-2"></i> Address</h5>
+              <p>SkyAlpha HD Media House<br />Maseru 100, Lesotho</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <form>
+              <div class="mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Your Name"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Your Email"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Subject" />
+              </div>
+              <div class="mb-3">
+                <textarea
+                  class="form-control"
+                  rows="5"
+                  placeholder="Your Message"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <img
+              src="https://via.placeholder.com/150x50?text=SkyAlpha+HD"
+              alt="SkyAlpha HD"
+              class="mb-3"
+            />
+            <p>
+              SkyAlpha HD is Lesotho's premier media house dedicated to
+              promoting innovation and digital transformation in education.
+            </p>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a href="#" class="text-white-50">Home</a></li>
+              <li class="mb-2">
+                <a href="#summits" class="text-white-50">Past Summits</a>
+              </li>
+              <li class="mb-2">
+                <a href="#about" class="text-white-50">About</a>
+              </li>
+              <li class="mb-2">
+                <a href="#contact" class="text-white-50">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+            <h5>Universities</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="#" class="text-white-50">National University</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white-50">Botho University</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white-50">Limkokwing</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-white-50">More...</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <h5>Newsletter</h5>
+            <p>Subscribe to get updates about upcoming summits and events.</p>
+            <form class="mb-3">
+              <div class="input-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Your Email"
+                />
+                <button class="btn btn-primary" type="submit">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <hr class="mt-4 mb-4" style="border-color: rgba(255, 255, 255, 0.1)" />
+        <div class="row">
+          <div class="col-md-6 text-center text-md-start">
+            <p class="mb-0">&copy; 2025 SkyAlpha HD. All rights reserved.</p>
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            <div class="footer-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Search Modal -->
+    <div class="modal fade" id="searchModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Search Summits</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="input-group mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Search by year, university, or topic"
+                />
+                <button class="btn btn-primary" type="submit">Search</button>
+              </div>
+            </form>
+            <div class="mt-3">
+              <h6>Popular Searches:</h6>
+              <div class="d-flex flex-wrap gap-2">
+                <a href="#" class="btn btn-sm btn-outline-secondary"
+                  >NUL 2022</a
+                >
+                <a href="#" class="btn btn-sm btn-outline-secondary"
+                  >AI Workshops</a
+                >
+                <a href="#" class="btn btn-sm btn-outline-secondary"
+                  >Botho University</a
+                >
+                <a href="#" class="btn btn-sm btn-outline-secondary"
+                  >Digital Transformation</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Countdown Timer Script (for when there's no live stream)
+      /*
+        function updateCountdown() {
+            const endDate = new Date("2023-12-15T09:00:00").getTime();
+            const now = new Date().getTime();
+            const distance = endDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById("days").innerHTML = days.toString().padStart(2, "0");
+            document.getElementById("hours").innerHTML = hours.toString().padStart(2, "0");
+            document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, "0");
+            document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, "0");
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        */
+    </script>
+  </body>
+</html>
