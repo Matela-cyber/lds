@@ -13,7 +13,179 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
     <style>
-      /* [All CSS from previous file remains the same] */
+      :root {
+        --primary-color: #0056b3;
+        --secondary-color: #6c757d;
+        --accent-color: #ffc107;
+        --dark-color: #343a40;
+        --light-color: #f8f9fa;
+        --success-color: #28a745;
+        --danger-color: #dc3545;
+        --info-color: #17a2b8;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      .hero-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url("https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 100px 0;
+        text-align: left;
+      }
+
+      .hero-badge {
+        background-color: var(--accent-color);
+        color: var(--dark-color);
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-weight: bold;
+        display: inline-block;
+        margin-bottom: 15px;
+      }
+
+      .live-section {
+        background-color: var(--dark-color);
+        color: white;
+        padding: 80px 0;
+      }
+
+      .video-container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        height: 0;
+        overflow: hidden;
+        border-radius: 10px;
+      }
+
+      .video-container iframe,
+      .video-container img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      .live-badge {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background-color: var(--danger-color);
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-weight: bold;
+        z-index: 10;
+      }
+
+      .countdown-timer {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 30px;
+        border-radius: 10px;
+        height: 100%;
+      }
+
+      .countdown-container {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+
+      .countdown-item {
+        text-align: center;
+      }
+
+      .countdown-number {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: white;
+      }
+
+      .countdown-label {
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        opacity: 0.8;
+      }
+
+      .schedule-item {
+        background: white;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        border-left: 5px solid var(--primary-color);
+      }
+
+      .schedule-time {
+        font-weight: bold;
+        color: var(--primary-color);
+        margin-bottom: 10px;
+      }
+
+      .chat-messages {
+        height: 300px;
+        overflow-y: auto;
+        padding: 15px;
+        background-color: #f8f9fa;
+        border-radius: 0 0 10px 10px;
+      }
+
+      .chat-message {
+        margin-bottom: 15px;
+        padding: 10px 15px;
+        border-radius: 10px;
+        background-color: #e9ecef;
+        max-width: 80%;
+      }
+
+      .chat-message.user {
+        margin-left: auto;
+        background-color: var(--primary-color);
+        color: white;
+      }
+
+      .chat-input-container {
+        padding: 15px;
+        border-top: 1px solid #eee;
+      }
+
+      .cta-section {
+        background: linear-gradient(135deg, var(--primary-color), #003366);
+        color: white;
+        padding: 80px 0;
+        text-align: center;
+      }
+
+      .main-footer {
+        background-color: var(--dark-color);
+        color: white;
+        padding: 60px 0 0;
+      }
+
+      @media (max-width: 768px) {
+        .hero-section {
+          padding: 60px 0;
+          text-align: center;
+        }
+
+        .countdown-container {
+          flex-wrap: wrap;
+        }
+
+        .countdown-item {
+          width: 50%;
+          margin-bottom: 20px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -125,7 +297,17 @@
           <div class="col-lg-8 mb-4 mb-lg-0">
             <div class="video-container">
               <div class="embed-responsive embed-responsive-16by9">
-                <div class="placeholder-content text-center py-5">
+                <div
+                  class="placeholder-content text-center py-5"
+                  style="
+                    background-color: #000;
+                    color: #fff;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                  "
+                >
                   <h3>
                     <i class="fas fa-clock me-2"></i> Summit Begins June 10,
                     2025
@@ -197,8 +379,10 @@
             </div>
 
             <div class="card">
-              <div class="chat-header">
-                <i class="fas fa-comments me-2"></i> Summit Community Chat
+              <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">
+                  <i class="fas fa-comments me-2"></i> Summit Community Chat
+                </h5>
               </div>
               <div class="chat-messages">
                 <div class="chat-message">
@@ -369,5 +553,246 @@
     </section>
 
     <!-- Technical Requirements -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h4>
+                  <i class="fas fa-laptop me-2"></i> Technical Requirements
+                </h4>
+                <p>For the best viewing experience:</p>
+                <ul>
+                  <li>Stable internet connection (5Mbps recommended)</li>
+                  <li>Updated web browser (Chrome, Firefox, Safari, Edge)</li>
+                  <li>Headphones or speakers for audio</li>
+                  <li>Second screen recommended for workshops</li>
+                </ul>
+                <p>Test your setup with our <a href="#">system checker</a>.</p>
+                <a href="faq.html" class="btn btn-outline-primary">View FAQs</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h4><i class="fas fa-question-circle me-2"></i> Need Help?</h4>
+                <p>Our support team is available to assist you:</p>
+                <ul>
+                  <li><strong>Email:</strong> support@digitalinnovators.org</li>
+                  <li><strong>Phone:</strong> +266 5899 4243</li>
+                  <li>
+                    <strong>Live Chat:</strong> Available during summit hours
+                  </li>
+                </ul>
+                <p>
+                  Visit our <a href="help.html">help center</a> for common
+                  issues and solutions.
+                </p>
+                <a href="contact.html" class="btn btn-outline-primary"
+                  >Contact Support</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <h2>Ready to Join the Digital Revolution?</h2>
+        <p>
+          Register now for the Digital Innovators Summit 2025 and be part of
+          shaping Lesotho's digital future.
+        </p>
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+          <a href="register.html" class="btn btn-light btn-lg">Register Now</a>
+          <a href="contact.html" class="btn btn-outline-light btn-lg"
+            >Contact Us</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <img
+              src="https://via.placeholder.com/150x50?text=SkyAlpha+HD"
+              alt="SkyAlpha HD"
+              class="footer-logo"
+            />
+            <p class="footer-about">
+              Aligned with Lesotho's National Digital Transformation Strategy,
+              the Digital Innovators Summit is a movement toward creating a
+              digitally empowered society.
+            </p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://twitter.com/DIS_Lesotho2024" target="_blank"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+            <div class="footer-links">
+              <h5>Summits</h5>
+              <ul>
+                <li><a href="summit2023.html">2023 Summit</a></li>
+                <li><a href="summit2022.html">2022 Summit</a></li>
+                <li><a href="summit2021.html">2021 Summit</a></li>
+                <li><a href="past-summits.html">All Summits</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+            <div class="footer-links">
+              <h5>Event</h5>
+              <ul>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="speakers.html">Speakers</a></li>
+                <li><a href="sessions.html">Sessions</a></li>
+                <li><a href="live.html">Live Stream</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+            <div class="footer-links">
+              <h5>Partners</h5>
+              <ul>
+                <li><a href="universities.html">Universities</a></li>
+                <li><a href="partners.html">Organizations</a></li>
+                <li><a href="sponsors.html">Sponsors</a></li>
+                <li><a href="collaborators.html">Collaborators</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-4">
+            <div class="footer-links">
+              <h5>Contact</h5>
+              <ul>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="team.html">Our Team</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="faq.html">FAQs</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="row">
+            <div class="col-md-6">
+              <p class="copyright mb-3 mb-md-0">
+                © 2025 Digital Innovators Summit. All rights reserved.
+              </p>
+            </div>
+            <div class="col-md-6 text-md-end">
+              <a href="privacy.html" class="text-white-50 me-3"
+                >Privacy Policy</a
+              >
+              <a href="terms.html" class="text-white-50">Terms of Service</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Countdown Timer
+      function updateCountdown() {
+        const summitDate = new Date("June 10, 2025 09:00:00").getTime();
+        const now = new Date().getTime();
+        const distance = summitDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown-days").innerHTML = days
+          .toString()
+          .padStart(2, "0");
+        document.getElementById("countdown-hours").innerHTML = hours
+          .toString()
+          .padStart(2, "0");
+        document.getElementById("countdown-minutes").innerHTML = minutes
+          .toString()
+          .padStart(2, "0");
+        document.getElementById("countdown-seconds").innerHTML = seconds
+          .toString()
+          .padStart(2, "0");
+
+        if (distance < 0) {
+          clearInterval(countdownTimer);
+          document.querySelector(".countdown-container").innerHTML =
+            '<h4 class="text-success">Summit is Live Now!</h4>';
+        }
+      }
+
+      const countdownTimer = setInterval(updateCountdown, 1000);
+      updateCountdown();
+
+      // Simple Chat Simulation
+      document
+        .getElementById("send-message")
+        .addEventListener("click", function () {
+          const chatInput = document.getElementById("chat-input");
+          const message = chatInput.value.trim();
+
+          if (message) {
+            const chatMessages = document.querySelector(".chat-messages");
+            const newMessage = document.createElement("div");
+            newMessage.className = "chat-message user";
+            newMessage.innerHTML = `<strong>You:</strong> ${message}`;
+            chatMessages.appendChild(newMessage);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            chatInput.value = "";
+
+            // Simulate response after a short delay
+            setTimeout(() => {
+              const responses = [
+                "Thanks for your comment!",
+                "Interesting point!",
+                "We'll address that in the Q&A session.",
+                "Great question!",
+                "Thanks for joining the conversation!",
+              ];
+              const randomResponse =
+                responses[Math.floor(Math.random() * responses.length)];
+              const responseMessage = document.createElement("div");
+              responseMessage.className = "chat-message";
+              responseMessage.innerHTML = `<strong>Moderator:</strong> ${randomResponse}`;
+              chatMessages.appendChild(responseMessage);
+              chatMessages.scrollTop = chatMessages.scrollHeight;
+            }, 1000);
+          }
+        });
+
+      // Allow pressing Enter to send message
+      document
+        .getElementById("chat-input")
+        .addEventListener("keypress", function (e) {
+          if (e.key === "Enter") {
+            document.getElementById("send-message").click();
+          }
+        });
+    </script>
   </body>
 </html>
