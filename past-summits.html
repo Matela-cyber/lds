@@ -1,109 +1,574 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Past Summits - Digital Innovators Summit</title>
-    <!-- Add your CSS links here -->
-  </head>
-  <body>
-    <header><!-- Navigation same as index.html --></header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Past Summits | Digital Innovators Summit</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* [Same CSS as index.html] */
+         :root {
+            --primary-color: #4a148c; /* Deep purple */
+            --secondary-color: #7b1fa2; /* Medium purple */
+            --accent-color: #e91e63; /* Pink accent */
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+        }
+ /* Footer */
+        .main-footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 0 0;
+        }
+        
+        .footer-logo {
+            height: 40px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-about {
+            opacity: 0.7;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links h5 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            background-color: rgba(0,0,0,0.2);
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        
+        .copyright {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
 
-    <main class="container my-5">
-      <h1>Past Summits</h1>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background:  whitesmoke;
+     
+        }
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background: linear-gradient(135deg, #4f46e5, #9333ea);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: white;
+            border: 4px solid #0d6efd;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .left {
+            left: 0;
+        }
+        .right {
+            left: 50%;
+        }
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid white;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent white;
+        }
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid white;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+        }
+        .right::after {
+            left: -16px;
+        }
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .btn-primary {
+    background: linear-gradient(135deg, #A020F0, #FF69B4); /* Purple to Pink gradient */
+    border: none;
+    color: white;
+    transition: all 0.3s ease;
+}
 
-      <div class="row">
-        <div class="col-md-4 mb-4">
-          <div class="card">
-            <img
-              src="/images/summit2023.jpg"
-              class="card-img-top"
-              alt="2023 Summit"
-            />
-            <div class="card-body">
-              <h3 class="card-title">2023 Summit</h3>
-              <p class="card-text">
-                Engaged 500+ participants from leading universities with 30%
-                implementing digital tools post-summit.
-              </p>
-              <a href="summit2023.html" class="btn btn-primary">See Details</a>
+.btn-primary:hover,
+.btn-primary:focus {
+    background: linear-gradient(135deg, #FF69B4, #A020F0); /* Inverted gradient on hover */
+    box-shadow: 0 0 10px rgba(160, 32, 240, 0.6);
+    color: white;
+}
+
+        @media screen and (max-width: 600px) {
+            .timeline::after {
+                left: 31px;
+            }
+            .timeline-container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            .timeline-container::before {
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+            .left::after, .right::after {
+                left: 15px;
+            }
+            .right {
+                left: 0%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header - Same as index.html -->
+    <header class="main-header sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="logo.jpeg" alt="SkyAlpha HD">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="#" id="summitsDropdown" role="button" data-bs-toggle="dropdown">
+                                Summits
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="summit2023.html">2023 Summit</a></li>
+                                <li><a class="dropdown-item" href="summit2022.html">2022 Summit</a></li>
+                                <li><a class="dropdown-item" href="summit2021.html">2021 Summit</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item active" href="past-summits.html">All Summits</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="live.html">Live</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="sessions.html">Sessions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="universities.html">Universities</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                    <a href="register.html" class="btn btn-primary ms-lg-3">Register Now</a>
+                </div>
             </div>
-          </div>
-        </div>
+        </nav>
+    </header>
 
-        <div class="col-md-4 mb-4">
-          <div class="card">
-            <img
-              src="/images/summit2022.jpg"
-              class="card-img-top"
-              alt="2022 Summit"
-            />
-            <div class="card-body">
-              <h3 class="card-title">2022 Summit</h3>
-              <p class="card-text">
-                Focused on digital literacy and combating misinformation through
-                technology.
-              </p>
-              <a href="summit2022.html" class="btn btn-primary">See Details</a>
+
+    <!-- Summit Highlights Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="mb-3">Our Journey</h2>
+                    <p class="lead text-muted">Milestones from previous Digital Innovators Summits</p>
+                </div>
             </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 mb-4">
-          <div class="card">
-            <img
-              src="/images/summit2021.jpg"
-              class="card-img-top"
-              alt="2021 Summit"
-            />
-            <div class="card-body">
-              <h3 class="card-title">2021 Summit</h3>
-              <p class="card-text">
-                Laid the foundation for digital transformation in Lesotho's
-                institutions.
-              </p>
-              <a href="summit2021.html" class="btn btn-primary">See Details</a>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center">
+                            <div class="display-4 text-primary mb-3">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3>500+</h3>
+                            <p class="card-text">Participants engaged across all summits</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center">
+                            <div class="display-4 text-primary mb-3">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <h3>5</h3>
+                            <p class="card-text">Partner universities and institutions</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center">
+                            <div class="display-4 text-primary mb-3">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h3>30%</h3>
+                            <p class="card-text">Participants implemented digital tools post-summit</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
+    </section>
 
-      <div class="achievements mt-5">
-        <h2>Cumulative Achievements</h2>
-        <div class="row">
-          <div class="col-md-4">
-            <h3>1,500+</h3>
-            <p>Participants trained in digital skills</p>
-          </div>
-          <div class="col-md-4">
-            <h3>30+</h3>
-            <p>Campaigns against misinformation</p>
-          </div>
-          <div class="col-md-4">
-            <h3>5</h3>
-            <p>MOUs with universities</p>
-          </div>
+    <!-- Timeline Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="mb-3">Summit Timeline</h2>
+                    <p class="lead text-muted">Our evolution through the years</p>
+                </div>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-container left">
+                    <div class="timeline-content">
+                        <h3>2021 Summit</h3>
+                        <p class="text-muted">June 15-17, 2021</p>
+                        <p>The inaugural Digital Innovators Summit focused on introducing digital literacy and basic AI concepts to Lesotho's academic community.</p>
+                        <a href="summit2021.html" class="btn btn-sm btn-primary">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="timeline-container right">
+                    <div class="timeline-content">
+                        <h3>2022 Summit</h3>
+                        <p class="text-muted">August 10-12, 2022</p>
+                        <p>Expanded to include policy makers and industry partners, with a focus on practical applications of digital tools in various sectors.</p>
+                        <a href="summit2022.html" class="btn btn-sm btn-primary">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="timeline-container left">
+                    <div class="timeline-content">
+                        <h3>2023 Summit</h3>
+                        <p class="text-muted">September 5-7, 2023</p>
+                        <p>Featured international speakers and hands-on workshops, with a special focus on ethical AI and combating misinformation.</p>
+                        <a href="summit2023.html" class="btn btn-sm btn-primary">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="timeline-container right">
+                    <div class="timeline-content">
+                        <h3>2025 Summit</h3>
+                        <p class="text-muted">Coming June 10-12, 2025</p>
+                        <p>Building on past successes with a theme of "Empowering Truth in the Age of AI: Building Digital Futures for Lesotho".</p>
+                        <a href="index.html" class="btn btn-sm btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <div class="testimonials mt-5">
-        <h2>What Participants Say</h2>
-        <div class="card">
-          <div class="card-body">
-            <blockquote class="blockquote">
-              <p>
-                "The summit has transformed how we approach technology in our
-                university. The insights we gained have been invaluable."
-              </p>
-              <footer class="blockquote-footer">
-                Dr. Thabo Mokoena, <cite>National University</cite>
-              </footer>
-            </blockquote>
-          </div>
+    <!-- Impact Stories Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="mb-3">Impact Stories</h2>
+                    <p class="lead text-muted">How our summits have made a difference</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top" alt="Impact Story">
+                        <div class="card-body">
+                            <h5 class="card-title">Digital Tools in Education</h5>
+                            <p class="card-text">30% of participants have implemented digital tools in their work or studies after attending our summits.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top" alt="Impact Story">
+                        <div class="card-body">
+                            <h5 class="card-title">Policy Influence</h5>
+                            <p class="card-text">Summit discussions have directly influenced digital transformation policies at national level.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top" alt="Impact Story">
+                        <div class="card-body">
+                            <h5 class="card-title">International Recognition</h5>
+                            <p class="card-text">The summit has been lauded as a cornerstone for digital literacy advancement in Lesotho.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </main>
+    </section>
 
-    <footer><!-- Same as index.html --></footer>
-  </body>
+    <!-- Gallery Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="mb-3">Gallery</h2>
+                    <p class="lead text-muted">Memories from past summits</p>
+                </div>
+            </div>
+            
+            <div class="row g-3">
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#galleryModal" data-bs-img="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80">
+                        <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" class="img-fluid rounded" alt="Summit Photo">
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#galleryModal" data-bs-img="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80">
+                        <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" class="img-fluid rounded" alt="Summit Photo">
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#galleryModal" data-bs-img="https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80">
+                        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" class="img-fluid rounded" alt="Summit Photo">
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#galleryModal" data-bs-img="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" class="img-fluid rounded" alt="Summit Photo">
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#galleryModal" data-bs-img="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" class="img-fluid rounded" alt="Summit Photo">
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#galleryModal" data-bs-img="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80">
+                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" class="img-fluid rounded" alt="Summit Photo">
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#galleryModal" data-bs-img="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80">
+                        <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" class="img-fluid rounded" alt="Summit Photo">
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#galleryModal" data-bs-img="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80">
+                        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" class="img-fluid rounded" alt="Summit Photo">
+                    </a>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-primary">View More Photos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Modal -->
+    <div class="modal fade" id="galleryModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-body p-0">
+                    <img src="" class="img-fluid" id="galleryModalImage" alt="Summit Photo">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Join the 2025 Digital Revolution?</h2>
+            <p>Register now for the Digital Innovators Summit 2025 and be part of shaping Lesotho's digital future.</p>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+                <a href="register.html" class="btn btn-light btn-lg">Register Now</a>
+                <a href="contact.html" class="btn btn-outline-light btn-lg">Contact Us</a>
+            </div>
+        </div>
+    </section>
+ <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <img src="https://via.placeholder.com/150x50?text=SkyAlpha+HD" alt="SkyAlpha HD" class="footer-logo">
+                    <p class="footer-about">SkyAlpha HD is Lesotho's premier media house dedicated to promoting innovation and digital transformation in education through annual Digital Innovation Summits.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <div class="footer-links">
+                        <h5>Summits</h5>
+                        <ul>
+                            <li><a href="#">2023 Summit</a></li>
+                            <li><a href="#">2022 Summit</a></li>
+                            <li><a href="#">2021 Summit</a></li>
+                            <li><a href="#">All Summits</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <div class="footer-links">
+                        <h5>Sessions</h5>
+                        <ul>
+                            <li><a href="#">Live Streams</a></li>
+                            <li><a href="#">Recorded Videos</a></li>
+                            <li><a href="#">Schedule</a></li>
+                            <li><a href="#">Speakers</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <div class="footer-links">
+                        <h5>Universities</h5>
+                        <ul>
+                            <li><a href="#">National University</a></li>
+                            <li><a href="#">Botho University</a></li>
+                            <li><a href="#">Limkokwing</a></li>
+                            <li><a href="#">All Universities</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4">
+                    <div class="footer-links">
+                        <h5>About</h5>
+                        <ul>
+                            <li><a href="#">Our Mission</a></li>
+                            <li><a href="#">Team</a></li>
+                            <li><a href="#">Partners</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="copyright mb-3 mb-md-0">© 2023 SkyAlpha HD. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="#" class="text-white-50 me-3">Privacy Policy</a>
+                        <a href="#" class="text-white-50">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Gallery Modal Script
+        var galleryModal = document.getElementById('galleryModal');
+        galleryModal.addEventListener('show.bs.modal', function (event) {
+            var button = event.relatedTarget;
+            var imgSrc = button.getAttribute('data-bs-img');
+            var modalImage = galleryModal.querySelector('#galleryModalImage');
+            modalImage.src = imgSrc;
+        });
+    </script>
+</body>
 </html>
