@@ -323,7 +323,7 @@
         margin-right: auto;
       }
 
-      /* Footer Styles */
+      /* Footer */
       .main-footer {
         background-color: var(--primary-color);
         color: white;
@@ -392,25 +392,83 @@
         padding: 20px 0;
         margin-top: 40px;
       }
+      .footer-bottom {
+        background-color: rgba(0, 0, 0, 0.2);
+        padding: 20px 0;
+        margin-top: 40px;
+      }
 
-      /* Responsive adjustments */
+      /* Default mobile padding (small screens) */
+      .footer-bottom .container {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      /* Tablet (medium screens) */
+      @media (min-width: 768px) {
+        .footer-bottom .container {
+          padding-left: 30px;
+          padding-right: 30px;
+        }
+      }
+
+      /* Desktop (large screens) - BIGGER PADDING AS REQUESTED */
+      @media (min-width: 992px) {
+        .footer-bottom .container {
+          padding-left: 100px; /* Increased from 60px to 100px */
+          padding-right: 100px; /* Increased from 60px to 100px */
+        }
+      }
+
+      .copyright {
+        opacity: 0.7;
+        font-size: 0.9rem;
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 992px) {
+        .hero-section h1 {
+          font-size: 2.5rem;
+        }
+
+        .hero-section .lead {
+          font-size: 1.25rem;
+        }
+      }
+
       @media (max-width: 768px) {
-        .about-hero {
+        .hero-section {
           padding: 80px 0;
         }
 
-        .about-hero h1 {
-          font-size: 2.5rem;
+        .hero-section h1 {
+          font-size: 2rem;
+        }
+
+        .countdown-item {
+          margin: 0 5px;
+        }
+
+        .countdown-number {
+          font-size: 2rem;
         }
       }
 
       @media (max-width: 576px) {
-        .about-hero {
+        .hero-section {
           padding: 60px 0;
         }
 
-        .about-hero h1 {
-          font-size: 2rem;
+        .countdown-item {
+          margin: 0 3px;
+        }
+
+        .countdown-number {
+          font-size: 1.5rem;
+        }
+
+        .countdown-label {
+          font-size: 0.7rem;
         }
       }
     </style>
@@ -1030,7 +1088,7 @@
       </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer - Updated with proper links -->
     <footer class="main-footer">
       <div class="container">
         <div class="row">

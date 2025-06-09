@@ -96,8 +96,10 @@
       }
 
       .footer-logo {
-        height: 40px;
+        height: 70px;
         margin-bottom: 20px;
+        background-color: aliceblue;
+        border-radius: 20%;
       }
 
       .footer-about {
@@ -155,132 +157,83 @@
         padding: 20px 0;
         margin-top: 40px;
       }
+      .footer-bottom {
+        background-color: rgba(0, 0, 0, 0.2);
+        padding: 20px 0;
+        margin-top: 40px;
+      }
+
+      /* Default mobile padding (small screens) */
+      .footer-bottom .container {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      /* Tablet (medium screens) */
+      @media (min-width: 768px) {
+        .footer-bottom .container {
+          padding-left: 30px;
+          padding-right: 30px;
+        }
+      }
+
+      /* Desktop (large screens) - BIGGER PADDING AS REQUESTED */
+      @media (min-width: 992px) {
+        .footer-bottom .container {
+          padding-left: 100px; /* Increased from 60px to 100px */
+          padding-right: 100px; /* Increased from 60px to 100px */
+        }
+      }
 
       .copyright {
         opacity: 0.7;
         font-size: 0.9rem;
       }
 
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background: whitesmoke;
-      }
-      .timeline {
-        position: relative;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-      .timeline::after {
-        content: "";
-        position: absolute;
-        width: 6px;
-        background: linear-gradient(135deg, #4f46e5, #9333ea);
-        top: 0;
-        bottom: 0;
-        left: 50%;
-        margin-left: -3px;
-      }
-      .timeline-container {
-        padding: 10px 40px;
-        position: relative;
-        background-color: inherit;
-        width: 50%;
-      }
-      .timeline-container::after {
-        content: "";
-        position: absolute;
-        width: 25px;
-        height: 25px;
-        right: -17px;
-        background-color: white;
-        border: 4px solid #0d6efd;
-        top: 15px;
-        border-radius: 50%;
-        z-index: 1;
-      }
-      .left {
-        left: 0;
-      }
-      .right {
-        left: 50%;
-      }
-      .left::before {
-        content: " ";
-        height: 0;
-        position: absolute;
-        top: 22px;
-        width: 0;
-        z-index: 1;
-        right: 30px;
-        border: medium solid white;
-        border-width: 10px 0 10px 10px;
-        border-color: transparent transparent transparent white;
-      }
-      .right::before {
-        content: " ";
-        height: 0;
-        position: absolute;
-        top: 22px;
-        width: 0;
-        z-index: 1;
-        left: 30px;
-        border: medium solid white;
-        border-width: 10px 10px 10px 0;
-        border-color: transparent white transparent transparent;
-      }
-      .right::after {
-        left: -16px;
-      }
-      .timeline-content {
-        padding: 20px 30px;
-        background-color: white;
-        position: relative;
-        border-radius: 6px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      }
-      .btn-primary {
-        background: linear-gradient(
-          135deg,
-          #a020f0,
-          #ff69b4
-        ); /* Purple to Pink gradient */
-        border: none;
-        color: white;
-        transition: all 0.3s ease;
+      /* Responsive Adjustments */
+      @media (max-width: 992px) {
+        .hero-section h1 {
+          font-size: 2.5rem;
+        }
+
+        .hero-section .lead {
+          font-size: 1.25rem;
+        }
       }
 
-      .btn-primary:hover,
-      .btn-primary:focus {
-        background: linear-gradient(
-          135deg,
-          #ff69b4,
-          #a020f0
-        ); /* Inverted gradient on hover */
-        box-shadow: 0 0 10px rgba(160, 32, 240, 0.6);
-        color: white;
+      @media (max-width: 768px) {
+        .hero-section {
+          padding: 80px 0;
+        }
+
+        .hero-section h1 {
+          font-size: 2rem;
+        }
+
+        .countdown-item {
+          margin: 0 5px;
+        }
+
+        .countdown-number {
+          font-size: 2rem;
+        }
       }
 
-      @media screen and (max-width: 600px) {
-        .timeline::after {
-          left: 31px;
+      @media (max-width: 576px) {
+        .hero-section {
+          padding: 60px 0;
         }
-        .timeline-container {
-          width: 100%;
-          padding-left: 70px;
-          padding-right: 25px;
+
+        .countdown-item {
+          margin: 0 3px;
         }
-        .timeline-container::before {
-          left: 60px;
-          border: medium solid white;
-          border-width: 10px 10px 10px 0;
-          border-color: transparent white transparent transparent;
+
+        .countdown-number {
+          font-size: 1.5rem;
         }
-        .left::after,
-        .right::after {
-          left: 15px;
-        }
-        .right {
-          left: 0%;
+
+        .countdown-label {
+          font-size: 0.7rem;
         }
       }
     </style>
@@ -782,27 +735,58 @@
         </div>
       </div>
     </section>
-    <!-- Footer -->
+    <!-- Footer - Updated with proper links -->
     <footer class="main-footer">
       <div class="container">
         <div class="row">
           <div class="col-lg-4 mb-5 mb-lg-0">
-            <img
-              src="https://via.placeholder.com/150x50?text=SkyAlpha+HD"
-              alt="SkyAlpha HD"
-              class="footer-logo"
-            />
+            <a
+              href="https://www.skyalphahd.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="images/logos/skyalpha.png"
+                alt="SkyAlpha HD"
+                class="footer-logo"
+              />
+            </a>
             <p class="footer-about">
-              SkyAlpha HD is Lesotho's premier media house dedicated to
-              promoting innovation and digital transformation in education
-              through annual Digital Innovation Summits.
+              Aligned with Lesotho's National Digital Transformation Strategy,
+              the Digital Innovators Summit is a movement toward creating a
+              digitally empowered society.
             </p>
             <div class="social-links">
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-linkedin-in"></i></a>
-              <a href="#"><i class="fab fa-youtube"></i></a>
+              <a
+                href="https://www.facebook.com/DigitalInnovatorsSummitLesotho"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="https://twitter.com/DIS_Lesotho2025"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/digitalinnovatorslesotho"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/company/digital-innovators-summit-lesotho"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a
+                href="https://www.youtube.com/c/DigitalInnovatorsSummitLesotho"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-youtube"></i
+              ></a>
             </div>
           </div>
 
@@ -810,61 +794,65 @@
             <div class="footer-links">
               <h5>Summits</h5>
               <ul>
-                <li><a href="#">2023 Summit</a></li>
-                <li><a href="#">2022 Summit</a></li>
-                <li><a href="#">2021 Summit</a></li>
-                <li><a href="#">All Summits</a></li>
+                <li><a href="summit2023.html">2023 Summit</a></li>
+                <li><a href="summit2022.html">2022 Summit</a></li>
+                <li><a href="summit2021.html">2021 Summit</a></li>
+                <li><a href="past-summits.html">All Summits</a></li>
               </ul>
             </div>
           </div>
 
           <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
             <div class="footer-links">
-              <h5>Sessions</h5>
+              <h5>Event</h5>
               <ul>
-                <li><a href="#">Live Streams</a></li>
-                <li><a href="#">Recorded Videos</a></li>
-                <li><a href="#">Schedule</a></li>
-                <li><a href="#">Speakers</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="speakers.html">Speakers</a></li>
+                <li><a href="sessions.html">Sessions</a></li>
+                <li><a href="live.html">Live Stream</a></li>
               </ul>
             </div>
           </div>
 
           <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
             <div class="footer-links">
-              <h5>Universities</h5>
+              <h5>Partners</h5>
               <ul>
-                <li><a href="#">National University</a></li>
-                <li><a href="#">Botho University</a></li>
-                <li><a href="#">Limkokwing</a></li>
-                <li><a href="#">All Universities</a></li>
+                <li><a href="universities.html">Universities</a></li>
+                <li><a href="partners.html">Organizations</a></li>
+                <li><a href="sponsors.html">Sponsors</a></li>
+                <li><a href="collaborators.html">Collaborators</a></li>
               </ul>
             </div>
           </div>
 
           <div class="col-lg-2 col-md-4">
             <div class="footer-links">
-              <h5>About</h5>
+              <h5>Contact</h5>
               <ul>
-                <li><a href="#">Our Mission</a></li>
-                <li><a href="#">Team</a></li>
-                <li><a href="#">Partners</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="team.html">Our Team</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="faq.html">FAQs</a></li>
               </ul>
             </div>
           </div>
         </div>
 
         <div class="footer-bottom">
-          <div class="row">
-            <div class="col-md-6">
-              <p class="copyright mb-3 mb-md-0">
-                © 2023 SkyAlpha HD. All rights reserved.
-              </p>
-            </div>
-            <div class="col-md-6 text-md-end">
-              <a href="#" class="text-white-50 me-3">Privacy Policy</a>
-              <a href="#" class="text-white-50">Terms of Service</a>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <p class="copyright mb-3 mb-md-0">
+                  © 2025 Digital Innovators Summit. All rights reserved.
+                </p>
+              </div>
+              <div class="col-md-6 text-md-end">
+                <a href="privacy.html" class="text-white-50 me-3"
+                  >Privacy Policy</a
+                >
+                <a href="terms.html" class="text-white-50">Terms of Service</a>
+              </div>
             </div>
           </div>
         </div>
