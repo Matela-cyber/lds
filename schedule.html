@@ -2131,5 +2131,25 @@
           });
       }
     </script>
+    <script>
+      // Close mobile menu when clicking outside
+      document.addEventListener("click", function (event) {
+        const navbarCollapse = document.getElementById("navbarNav");
+        const navbarToggler = document.querySelector(".navbar-toggler");
+
+        if (
+          navbarCollapse.classList.contains("show") &&
+          !event.target.closest(".navbar") &&
+          !event.target.classList.contains("navbar-toggler")
+        ) {
+          const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+            toggle: false,
+          });
+          bsCollapse.hide();
+
+          navbarToggler.setAttribute("aria-expanded", "false");
+        }
+      });
+    </script>
   </body>
 </html>

@@ -531,11 +531,19 @@
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                  <span class="nav-link-inner">Home</span>
+                </a>
+              </li>
               <li class="nav-item dropdown">
                 <a
                   class="nav-link dropdown-toggle"
@@ -573,17 +581,67 @@
               <li class="nav-item">
                 <a class="nav-link" href="live.html">Live</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="sessions.html">Sessions</a>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="eventDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                >
+                  Event
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="live.html">Live</a></li>
+                  <li>
+                    <a class="dropdown-item" href="sessions.html">Sessions</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="schedule.html">Schedule</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="speakers.html">Speakers</a>
+                  </li>
+                </ul>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="universities.html">Universities</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html">About</a>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="partnersDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                >
+                  Partners
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="universities.html"
+                      >Universities</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="partners.html"
+                      >Organizations</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="sponsors.html">Sponsors</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="collaborators.html"
+                      >Collaborators</a
+                    >
+                  </li>
+                </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact</a>
+                <a class="nav-link active-about" href="about.html">
+                  <span class="nav-link-inner">About</span>
+                </a>
               </li>
             </ul>
             <a href="register.html" class="btn btn-primary ms-lg-3"
@@ -1121,6 +1179,26 @@
             link.classList.add("active");
           }
         });
+      });
+    </script>
+    <script>
+      // Close mobile menu when clicking outside
+      document.addEventListener("click", function (event) {
+        const navbarCollapse = document.getElementById("navbarNav");
+        const navbarToggler = document.querySelector(".navbar-toggler");
+
+        if (
+          navbarCollapse.classList.contains("show") &&
+          !event.target.closest(".navbar") &&
+          !event.target.classList.contains("navbar-toggler")
+        ) {
+          const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+            toggle: false,
+          });
+          bsCollapse.hide();
+
+          navbarToggler.setAttribute("aria-expanded", "false");
+        }
       });
     </script>
   </body>
