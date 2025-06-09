@@ -6,36 +6,77 @@
     <title>Digital Innovators Summit 2025 - Speakers</title>
     <style>
       :root {
-        --primary-color: #2c3e50;
-        --secondary-color: #3498db;
-        --accent-color: #e74c3c;
-        --light-color: #ecf0f1;
-        --dark-color: #2c3e50;
-        --text-color: #333;
-        --transition: all 0.3s ease;
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        --primary-color: #4a148c; /* Deep purple */
+        --secondary-color: #7b1fa2; /* Medium purple */
+        --accent-color: #e91e63; /* Pink accent */
+        --light-color: #f8f9fa;
+        --dark-color: #212529;
       }
 
       body {
-        background-color: #f5f7fa;
-        color: var(--text-color);
+        font-family: "Roboto", sans-serif;
+        color: #333;
         line-height: 1.6;
-        padding: 20px;
+        padding-top: 70px; /* For fixed navbar */
       }
 
-      header {
-        text-align: center;
-        margin-bottom: 40px;
-        padding: 20px 0;
+      /* Header Styles - Consistent with reference */
+      .main-header {
         background-color: white;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar-brand img {
+        height: 40px;
+      }
+
+      .nav-link {
+        font-weight: 600;
+        color: var(--primary-color);
+        padding: 10px 15px !important;
+      }
+
+      .nav-link:hover {
+        color: var(--secondary-color);
+      }
+
+      .dropdown-menu {
+        border: none;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 0;
+      }
+
+      .dropdown-item {
+        font-weight: 500;
+        padding: 8px 20px;
+      }
+
+      .dropdown-item:hover {
+        background-color: rgba(123, 31, 162, 0.1);
+        color: var(--secondary-color);
+      }
+
+      /* Active state for Contact */
+      .nav-link.active-contact {
+        position: relative;
+        color: var(--primary-color) !important;
+      }
+
+      .nav-link.active-contact .nav-link-inner {
+        position: relative;
+        display: inline-block;
+      }
+
+      .nav-link.active-contact .nav-link-inner::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: var(--secondary-color);
+        transform: scaleX(1);
+        transition: transform 0.3s ease;
       }
 
       h1 {
