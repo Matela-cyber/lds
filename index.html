@@ -99,6 +99,35 @@
             background-color: rgba(123,31,162,0.1);
             color: var(--secondary-color);
         }
+        /* Custom Active State for Home */
+.nav-link.active-home {
+    position: relative;
+    color: var(--primary-color) !important;
+}
+
+.nav-link.active-home .nav-link-inner {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-link.active-home .nav-link-inner::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--secondary-color);
+    transform: scaleX(1);
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect for other nav items */
+.nav-link:not(.active-home):hover {
+    color: var(--secondary-color) !important;
+}
+
+
         
         /* Hero Section */
         .hero-section {
@@ -530,50 +559,81 @@
     </style>
 <body>
     <!-- Header -->
-    <header class="main-header sticky-top">
-        <nav class="navbar navbar-expand-lg navbar-light bg-white">
-            <div class="container">
-                <a class="navbar-brand" href="index.html">
-                    <img src="logo.jpeg" alt="SkyAlpha HD">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="summitsDropdown" role="button" data-bs-toggle="dropdown">
-                                Summits
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="summit2023.html">2023 Summit</a></li>
-                                <li><a class="dropdown-item" href="summit2022.html">2022 Summit</a></li>
-                                <li><a class="dropdown-item" href="summit2021.html">2021 Summit</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="past-summits.html">All Summits</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="live.html">Live</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="sessions.html">Sessions</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="universities.html">Universities</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.html">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
-                        </li>
-                    </ul>
-                    <a href="register.html" class="btn btn-primary ms-lg-3">Register Now</a>
-                </div>
+<header class="main-header sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo.jpeg" alt="SkyAlpha HD">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active-home" href="index.html">
+                            <span class="nav-link-inner">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="summitsDropdown" role="button" data-bs-toggle="dropdown">
+                            Summits
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="summit2023.html">2023 Summit</a></li>
+                            <li><a class="dropdown-item" href="summit2022.html">2022 Summit</a></li>
+                            <li><a class="dropdown-item" href="summit2021.html">2021 Summit</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="past-summits.html">All Summits</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="live.html">Live</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="eventDropdown" role="button" data-bs-toggle="dropdown">
+                            Event
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="live.html">Live</a></li>
+                            <li><a class="dropdown-item" href="sessions.html">Sessions</a></li>
+                            <li><a class="dropdown-item" href="schedule.html">Schedule</a></li>
+                            <li><a class="dropdown-item" href="speakers.html">Speakers</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="universities.html">Universities</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="partnersDropdown" role="button" data-bs-toggle="dropdown">
+                            Partners
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="universities.html">Universities</a></li>
+                            <li><a class="dropdown-item" href="partners.html">Organizations</a></li>
+                            <li><a class="dropdown-item" href="sponsors.html">Sponsors</a></li>
+                            <li><a class="dropdown-item" href="collaborators.html">Collaborators</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button" data-bs-toggle="dropdown">
+                            Contact
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="contact.html">Contact Us</a></li>
+                            <li><a class="dropdown-item" href="team.html">Our Team</a></li>
+                            <li><a class="dropdown-item" href="faq.html">FAQs</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">about</a>
+                    </li>
+                </ul>
+                <a href="register.html" class="btn btn-primary ms-lg-3">Register Now</a>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
+</header>
 
     <!-- Hero Section - Updated with 2025 Summit Info -->
     <section class="hero-section">
@@ -863,12 +923,12 @@ We’re championing the ethical use of AI to fight misinformation, empower digit
 </a>
                     <p class="footer-about">Aligned with Lesotho's National Digital Transformation Strategy, the Digital Innovators Summit is a movement toward creating a digitally empowered society.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://twitter.com/DIS_Lesotho2024" target="_blank"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
+    <a href="https://www.facebook.com/DigitalInnovatorsSummitLesotho" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://twitter.com/DIS_Lesotho2025" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.instagram.com/digitalinnovatorslesotho" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/company/digital-innovators-summit-lesotho" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://www.youtube.com/c/DigitalInnovatorsSummitLesotho" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+</div>
                 </div>
                 
                 <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
@@ -958,5 +1018,45 @@ We’re championing the ethical use of AI to fight misinformation, empower digit
         setInterval(updateCountdown, 1000);
         updateCountdown();
     </script>
+    <script>
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const navbarCollapse = document.getElementById('navbarNav');
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        
+        // If mobile menu is open and click is outside navbar
+        if (navbarCollapse.classList.contains('show') && 
+            !event.target.closest('.navbar') && 
+            !event.target.classList.contains('navbar-toggler')) {
+            
+            // Close the menu
+            const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+                toggle: false
+            });
+            bsCollapse.hide();
+            
+            // Change the toggler icon back to three lines
+            navbarToggler.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    // Countdown Timer Script - Keep your existing countdown code
+    function updateCountdown() {
+        const endDate = new Date("2025-06-10T09:00:00").getTime();
+        const now = new Date().getTime();
+        const distance = endDate - now;
+        
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        
+        document.getElementById("days").innerHTML = days.toString().padStart(2, "0");
+        document.getElementById("hours").innerHTML = hours.toString().padStart(2, "0");
+        document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, "0");
+    }
+    
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+</script>
 </body>
 </html>
