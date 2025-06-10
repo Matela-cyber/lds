@@ -12,15 +12,11 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
-    <link
-      href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css"
-      rel="stylesheet"
-    />
     <style>
       :root {
-        --primary-color: #0a2240;
-        --secondary-color: #00aeef;
-        --accent-color: #e31937;
+        --primary-color: #4a148c; /* Deep purple */
+        --secondary-color: #7b1fa2; /* Medium purple */
+        --accent-color: #e91e63; /* Pink accent */
         --light-color: #f8f9fa;
         --dark-color: #212529;
       }
@@ -64,8 +60,8 @@
       }
 
       .btn-primary:hover {
-        background-color: #0095d9;
-        border-color: #0095d9;
+        background-color: #6a1b9a;
+        border-color: #6a1b9a;
       }
 
       .btn-outline-primary {
@@ -111,8 +107,35 @@
       }
 
       .dropdown-item:hover {
-        background-color: rgba(0, 174, 239, 0.1);
+        background-color: rgba(123, 31, 162, 0.1);
         color: var(--secondary-color);
+      }
+      /* Custom Active State for Home */
+      .nav-link.active-home {
+        position: relative;
+        color: var(--primary-color) !important;
+      }
+
+      .nav-link.active-home .nav-link-inner {
+        position: relative;
+        display: inline-block;
+      }
+
+      .nav-link.active-home .nav-link-inner::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: var(--secondary-color);
+        transform: scaleX(1);
+        transition: transform 0.3s ease;
+      }
+
+      /* Hover effect for other nav items */
+      .nav-link:not(.active-home):hover {
+        color: var(--secondary-color) !important;
       }
 
       /* Hero Section */

@@ -64,6 +64,17 @@
         border-color: #6a1b9a;
       }
 
+      .btn-outline-primary {
+        border-color: var(--secondary-color);
+        color: var(--secondary-color);
+        font-weight: 600;
+      }
+
+      .btn-outline-primary:hover {
+        background-color: var(--secondary-color);
+        color: white;
+      }
+
       /* Header Styles */
       .main-header {
         background-color: white;
@@ -99,19 +110,18 @@
         background-color: rgba(123, 31, 162, 0.1);
         color: var(--secondary-color);
       }
-
-      /* Active state for About */
-      .nav-link.active-about {
+      /* Custom Active State for Home */
+      .nav-link.active-home {
         position: relative;
         color: var(--primary-color) !important;
       }
 
-      .nav-link.active-about .nav-link-inner {
+      .nav-link.active-home .nav-link-inner {
         position: relative;
         display: inline-block;
       }
 
-      .nav-link.active-about .nav-link-inner::after {
+      .nav-link.active-home .nav-link-inner::after {
         content: "";
         position: absolute;
         bottom: -5px;
@@ -121,6 +131,11 @@
         background: var(--secondary-color);
         transform: scaleX(1);
         transition: transform 0.3s ease;
+      }
+
+      /* Hover effect for other nav items */
+      .nav-link:not(.active-home):hover {
+        color: var(--secondary-color) !important;
       }
 
       /* About Page Specific Styles */

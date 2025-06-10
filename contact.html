@@ -25,10 +25,57 @@
         font-family: "Roboto", sans-serif;
         color: #333;
         line-height: 1.6;
-        padding-top: 70px; /* For fixed navbar */
       }
 
-      /* Header Styles - Consistent with reference */
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-weight: 700;
+      }
+
+      .bg-primary {
+        background-color: var(--primary-color) !important;
+      }
+
+      .bg-secondary {
+        background-color: var(--secondary-color) !important;
+      }
+
+      .text-primary {
+        color: var(--primary-color) !important;
+      }
+
+      .text-secondary {
+        color: var(--secondary-color) !important;
+      }
+
+      .btn-primary {
+        background-color: var(--secondary-color);
+        border-color: var(--secondary-color);
+        padding: 10px 25px;
+        font-weight: 600;
+      }
+
+      .btn-primary:hover {
+        background-color: #6a1b9a;
+        border-color: #6a1b9a;
+      }
+
+      .btn-outline-primary {
+        border-color: var(--secondary-color);
+        color: var(--secondary-color);
+        font-weight: 600;
+      }
+
+      .btn-outline-primary:hover {
+        background-color: var(--secondary-color);
+        color: white;
+      }
+
+      /* Header Styles */
       .main-header {
         background-color: white;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -63,19 +110,18 @@
         background-color: rgba(123, 31, 162, 0.1);
         color: var(--secondary-color);
       }
-
-      /* Active state for Contact */
-      .nav-link.active-contact {
+      /* Custom Active State for Home */
+      .nav-link.active-home {
         position: relative;
         color: var(--primary-color) !important;
       }
 
-      .nav-link.active-contact .nav-link-inner {
+      .nav-link.active-home .nav-link-inner {
         position: relative;
         display: inline-block;
       }
 
-      .nav-link.active-contact .nav-link-inner::after {
+      .nav-link.active-home .nav-link-inner::after {
         content: "";
         position: absolute;
         bottom: -5px;
@@ -85,6 +131,11 @@
         background: var(--secondary-color);
         transform: scaleX(1);
         transition: transform 0.3s ease;
+      }
+
+      /* Hover effect for other nav items */
+      .nav-link:not(.active-home):hover {
+        color: var(--secondary-color) !important;
       }
 
       /* Contact Page Specific Styles */
