@@ -326,7 +326,7 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link active-home" href="index.html">
                   <span class="nav-link-inner">Home</span>
                 </a>
               </li>
@@ -424,10 +424,28 @@
                   </li>
                 </ul>
               </li>
-              <li class="nav-item">
-                <a class="nav-link active-about" href="about.html">
-                  <span class="nav-link-inner">About</span>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="contactDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                >
+                  Contact
                 </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="contact.html">Contact Us</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="team.html">Our Team</a>
+                  </li>
+                  <li><a class="dropdown-item" href="faq.html">FAQs</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">about</a>
               </li>
             </ul>
             <a href="register.html" class="btn btn-primary ms-lg-3"
